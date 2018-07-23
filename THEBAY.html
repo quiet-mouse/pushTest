@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>鹿角湾THEBAY合作报名表</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" href="./css/main.css">
+	<!-- 加上 -->
+	<script type="text/javascript" src="./js/addr.js"></script>
+	<!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> -->
+	<script type="text/javascript" src="./js/jquery-1.12.2.min.js"></script>
+</head>
+<body>
+	<div class="entry-container-inner">
+			<div class="form-header">
+				<img src="./img/head.jpg">
+				<h1 class="form-title form-title1">
+					鹿角湾合作报名表
+				</h1>
+				<div class="rexian">
+					<p>咨询热线:<span> ①400-6620078 ②400-6888647</span></p>
+				</div>
+			</div>
+		<form action="" class="cneter with-shadow" method="post" onsubmit="return submm()"> 	
+			<div class="form-content">
+				<div class="fields clearfix">
+					<div class="form-group">
+						<label>姓名</label>
+						<input type="text" value="" placeholder="请输入姓名" id="userName">
+						<i class="gd-icon-name"></i>
+					</div>
+					<div class="form-group telNum">
+						<label>手机</label>
+						<input type="text" value="" class="phone" placeholder="请输入手机" id="userNum">
+						<i class="gd-icon-tel"></i>
+						<label style="color:#ec6a2c; font-size: 0.8em;"></label>
+					</div>
+
+					<!-- 加上 -->
+					<div class="addr form-group">
+						<label>地址</label>
+						<select id="cmbProvince" name="cmbProvince"></select>
+					    <select id="cmbCity" name="cmbCity"></select>
+					    <select id="cmbArea" name="cmbArea"></select>
+					    <br>
+					    <!-- <input type="text" value="详细地址" onblur="if(this.value=''){this.value='详细地址'}" onfocus="if(this.value='详细地址'){this.value='';}"> -->
+					</div>
+					<!-- 加上 -->
+
+
+					<div class="chock">
+						<label>合作意向</label>
+						<input type="radio" name="intention" value="单店合作" >单店合作<br>  
+        				<input type="radio" name="intention" value="区域代理" >区域代理<br>  
+        				<input type="radio" name="intention" value="只是店铺消费者" >只是店铺消费者<br>  
+					</div>
+					<div class="chock">
+						<label>投资预算</label>
+						<input type="radio" name="budget" value="1-5w" >1-5w<br>  
+        				<input type="radio" name="budget" value="5-10w" >5-10w<br>  
+        				<input type="radio" name="budget" value="10w以上" >10w以上<br>  
+					</div>
+					<div class="chock">
+						<label>是否有相关工作经验</label>
+						<input type="radio" name="experience" value="有" >有<br>  
+        				<input type="radio" name="experience" value="无" >无<br>  
+					</div>
+					<div class="chock">
+						<label>意向店铺面积</label>
+						<input type="radio" name="Square" value="10-25平" >10-25平<br>  
+        				<input type="radio" name="Square" value="25-40平" >25-40平<br>  
+        				<input type="radio" name="Square" value="40平" >40平<br>  
+					</div>
+					<div class="chock">
+						<label>是否有考察过同类型品牌</label>
+						<input type="radio" name="types" value="有" >有<br>  
+        				<input type="radio" name="types" value="无" >无<br>   
+					</div>
+					<div class="miaoshu">
+						<label>如果有，有哪些？</label>
+						<input type="text" name="miaoshu" id="describe">
+					</div>
+					<div class="miaoshu">
+						<label>希望公司提供哪些支持？</label>
+						<textarea rows="3" id="hope"></textarea>
+					</div>
+					<div class="beizhu">
+			            <label>备注：</label>
+		                <p>&nbsp; 本公司将以此申请表所撰写之内容作为初步的评选之主要依据，通过初选才进入下一阶段审核程序。</p>
+		                <p>&nbsp; 无论是否通过，自本申请表提交之日起1-2个工作日之内电话或书面给予回复，请耐心等待；</p>
+				    </div>
+				</div>
+			</div>
+			<div class="sub">
+				<input type="submit" name="commit" value="提交" class="tijiao" id="send">
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript">
+		var subm = document.getElementsByClassName("tijiao");
+		var tel  = document.getElementsByClassName("phone")[0];
+		var txlabel = document.getElementsByClassName("telNum")[0].getElementsByTagName("label")[1];
+		var reg = /^1[34578][0-9]{9}$/;
+		function submm(){
+			// console.log("tel:|"+tel)
+			var telvalue = tel.value;
+			if(!reg.test(telvalue)){
+				txlabel.innerHTML = "号码格式错误";
+				alert("号码格式错误");
+				tel.value = ""
+				tel.focus();
+				return false;
+			}else{
+				txlabel.innerHTML = "";
+				txlabel.style.display = "none";
+				return true;
+			}
+		}
+		addressInit('cmbProvince', 'cmbCity', 'cmbArea');
+	</script>
+	<script type="text/javascript">
+		$('#send').click(function(){//留言板
+			var data = {};
+			var uname = $('#userName').val();
+			var uphone = $('#userNum').val();
+			var province = $("#cmbProvince").val();
+			var city = $("#cmbCity").val();
+			var area = $("#cmbArea").val();
+			var intention = $('input[name="intention"]:checked').val();
+			var budget = $('input[name="budget"]:checked').val();
+			var experience = $('input[name="experience"]:checked').val();
+			var square = $('input[name="Square"]:checked').val();
+			var types = $('input[name="types"]:checked').val();
+			var miaoshu = $('#describe').val();			// console.log(miaoshu)
+			var hope = $("#hope").val()
+
+			// console.log(uname +"\n"+ uphone +"\n"+ province+"\n"+city+"\n"+area+"\n"+intention+"\n"+ budget +"\n"+ experience +"\n"+ square +"\n"+ types +"\n"+ miaoshu +"\n"+ hope)
+			data['name'] = uname;
+			data['phone']= uphone;
+			data['url']=window.location.href;
+			var all = "地址: "+province+" "+city+" "+area+"\n合作意向: "+intention+"\n投资预算: "+budget+"\n工作经验: "+ experience + "\n店铺面积: "+square+"\n同类型品牌: " + types + "\n有哪些: " + miaoshu + "\n希望得到的支持: " + hope;
+			// console.log(all)
+			data['text']= all;
+			$.ajax({
+				url: 'http://res.jinfcc.com/system/index.php?m=index&a=message',
+				type: 'POST',
+				dataType: 'json',
+				data:data,
+				success:function(result){
+					alert(result['error']);
+				}
+			});	
+		});	
+	</script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+body,div,img,h1,p{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: url(../img/bg.jpg) top center no-repeat;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	font-family: "Pingfang SC", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
+	font-size: 14px;
+	background-color: #F1F1F1;
+    color: #434343;
+}
+
+.entry-container-inner{
+	width:700px;
+	min-height: 240px;
+	margin: 40px auto;
+}
+.container-header{
+	width: 100%;
+}
+.banner-img img{
+	max-width: 100%;
+	vertical-align: middle;
+}
+.form-header{
+	width: 100%;
+	background: white;
+    border-bottom: 1px solid grey;
+    overflow: hidden;
+    position: relative;
+    
+}
+.form-header .rexian{
+    position: absolute;
+    bottom: 3px;
+    right: 10px;
+}
+.rexian p{
+	line-height: 20px;
+}
+.rexian p span{
+	color:#fd8f1f;
+}
+.form-header p{
+	float: left;
+}
+.form-header img{
+	width: 100%;
+	vertical-align: middle;
+}
+.form-title{
+	display: block;
+	font-weight: normal;
+	background: #fff;
+	line-height: 60px;
+	font-size: 1.6em;
+	text-indent:1em;
+	/*border-bottom: 1px solid grey;*/
+}
+.form-content{
+	width: 100%;
+	min-height: 300px;
+	background: #fff;
+	padding-bottom: 50px;
+	border-bottom: 1px solid grey;
+}
+.fields{
+	padding:0 23px;
+}
+.form-group{
+	position: relative;
+	font-size: 1.17em;
+	color: #434343;
+	padding: 10px 0;
+}
+.form-group label, .chock label, .miaoshu label, .beizhu label{
+	font-weight: bold;
+	display: block;
+	margin-bottom: 7px;
+    /*font-size: 1.17em;*/
+}
+.form-group input{
+	width: 45%;
+	line-height: 25px;
+	padding-left: 25px;
+	/*border-radius: 3px;*/
+	/*border: 1px solid #b9b5b5;*/
+}
+.gd-icon-name{
+    content: url(../img/name.png);
+    position: absolute;
+    left: 5px;
+    top: 46px;
+}
+.gd-icon-tel{
+    content: url(../img/tel.png);
+    position: absolute;
+    left: 7px;
+    top: 46px;
+}
+.chock, .miaoshu, .beizhu{
+	margin-top: 30px;
+}
+.chock label, .miaoshu label{
+	font-size: 1.17em;
+}
+.miaoshu input{
+    width: 45%;
+    line-height: 25px;
+}
+.miaoshu textarea{
+	overflow: hidden;
+	word-wrap: break-word;
+	height: 66px;
+	width: 85%;
+}
+.sub{
+	height: 90px;
+	background: #fff;
+}
+.tijiao{
+	width: 150px;
+	height: 30px;
+	margin-top: 25px;
+	margin-left: 30px;
+	background: #5a4f48;
+	border: 0;
+	color: #fff;
+	font-weight: bold;
+}
+.tijiao:hover{
+	background: #423b36;
+}
+.addr select{
+	height: 30px;
+	border: 1px solid #a2a2a2;
+}
+.addr input{
+	height: 28px;
+	border: 1px solid #a2a2a2;
+	margin-top: 5px;
+	padding-left: 5px;
+	width: 48%;
+}
+.addr.form-group select, .addr input {
+    color: #333333;
+}
+@media screen and (max-width:700px){
+	.entry-container-inner{
+		width: 100%;
+		margin:0 auto;
+	}
+	.form-group input, .miaoshu input{
+		width: 80%;
+	}
+	.addr input{
+		width: 86%;
+	}
+	.miaoshu textarea{
+		width: 90%;
+	}
+	.form-header .rexian{
+		position: absolute;
+	    bottom: 3px;
+	    left: 2em;
+	    font-size: 10px;
+	}
+
+	.form-title1{
+	    display: block;
+	    font-weight: normal;
+	    background: #fff;
+	    /* line-height: 60px; */
+	    margin-top: -10px;
+	    font-size: 1.6em;
+	    text-indent: 1em;
+	    margin-bottom: 10px;
+	}
+}
